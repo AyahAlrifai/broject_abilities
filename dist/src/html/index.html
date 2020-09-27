@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("hello world");
+        $(":submit").click(()=>{
+          $("h4").toggle();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h4>Get UserProfile</h4>
+    <form action="api/user" method="get">
+      <label for="id">user id:</label>
+      <input type="text" name="id" value="">
+      <input type="submit" value="Submit">
+    </form>
+    <h4>Create User</h4>
+    <form action="/api/user" method="post">
+      <label for="id">id:</label>
+      <input type="text" name="id" value="">
+      <label for="type">type:</label>
+      <select name="type">
+        <option value="ADMIN">ADMIN</option>
+        <option value="NORMAL">NORMAL</option>
+      </select>
+      <label for="display_name">name:</label>
+      <input type="text" name="display_name" value="">
+      <label for="email">email:</label>
+      <input type="text" name="email" value="">
+      <input type="submit" value="Submit">
+    </form>
+    <h4>Get Users by Type</h4>
+    <form action="api/user/type" method="get">
+      <label for="type">type:</label>
+      <select name="type">
+        <option value="ADMIN">ADMIN</option>
+        <option value="NORMAL">NORMAL</option>
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
